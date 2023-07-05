@@ -1,23 +1,21 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Contact from './Contact'
 import Home from './Home'
 import './style.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <Home />
-        },
-        {
-            path: "/contact",
-            element: <Contact />
-        }
-    ])
-
     return (
-        <RouterProvider router={router}></RouterProvider>
+        <HelmetProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' Component={Home}></Route>
+                    <Route path='/contact' Component={Contact}></Route>
+                </Routes>
+            </BrowserRouter>
+        </HelmetProvider>
+
     )
 }
 
