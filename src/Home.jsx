@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
     <Helmet>
-      <link rel="stylesheet" href="/src/main.css" />
+      <link rel="stylesheet" href="/main.css" />
     </Helmet>
 
     <div>Home</div>
